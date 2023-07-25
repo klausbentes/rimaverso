@@ -1,0 +1,20 @@
+{% extends 'rimaverso/base.html' %}
+{% load static %}
+{% block content %}
+<div class="pesquisa">
+    <p>Você pesquisou pela palavra "{{ palavra }}".</p>
+</div>
+<section id="resultado">
+    {% if rimas %}
+    <div class="container">
+        {% for rima in rimas %}
+        <div class="card">
+            <h3>{{ rima }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h2>(!) Sem resultados. (!)</h2>
+    {% endif %}
+</section>
+{% endblock %}

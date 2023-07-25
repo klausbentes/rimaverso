@@ -1,0 +1,18 @@
+{% extends 'rimaverso/base.html' %}
+{% load static %}
+{% block content %}
+<div class="pesquisa">
+    <p>A palavra "{{ palavra }}" tem duas pronúncias possíveis.</p>
+    <p>Qual você quis dizer?</p>
+</div>
+
+<section id="resultado">
+    <div class="container">
+        {% for opcao in opcoes %}
+            <div class="card">
+                <h2>{{ opcao.pronuncia }}</h2>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

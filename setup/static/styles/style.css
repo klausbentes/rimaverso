@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pesquisa, .formulario, h1, h2 {
+    text-align: center;
+}
+
+
+.container {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Style the counter cards */
+.card {
+    width: 200px;
+    height: 75px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    text-align: center;
+    background-color: #f1f1f1;
+    justify-content: center;
+}
