@@ -16,7 +16,6 @@ body {
     text-align: center;
 }
 
-
 .container {
     display: flex;
     gap: 35px;
@@ -35,3 +34,25 @@ body {
     background-color: #f1f1f1;
     justify-content: center;
 }
+
+.formulario{
+    margin:0 auto;
+    width:575px;
+    border-radius:30px;
+    border:1px solid #dcdcdc;
+  }
+  .formulario:hover{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+  }
+  .formulario:focus-within{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+    outline:none;
+  }
+  .searchbar{
+    height:45px;
+    border:none;
+    width:500px;
+    font-size:16px;
+    outline: none;
+    
+  }
