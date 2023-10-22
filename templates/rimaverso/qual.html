@@ -9,9 +9,11 @@
 <section id="resultado">
     <div class="container">
         {% for opcao in opcoes %}
+        <a href="{% url 'selecionar_pronuncia' palavra=opcao.palavra pronuncia=opcao.pronuncia %}">
             <div class="card">
                 <h2>{{ opcao.pronuncia }}</h2>
             </div>
+        </a>
         {% endfor %}
     </div>
 </section>

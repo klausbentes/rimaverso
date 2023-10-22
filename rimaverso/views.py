@@ -11,7 +11,7 @@ def buscar(request):
     # Captura a palavra buscada pelo usuário
     if 'buscar' in request.GET:
         dicionario = Dicionario.objects.all().order_by('silabas')
-        palavra_a_buscar = request.GET['buscar']
+        palavra_a_buscar = request.GET['buscar'].lower()
 
         try: #Se houver apenas uma palavra como a pesquisada
             rima_da_palavra = dicionario.get(palavra__iexact=palavra_a_buscar).rima
@@ -35,3 +35,11 @@ def buscar(request):
     else:
         print('Nada a fazer.')
         pass
+
+def selecionar_pronuncia(request, palavra, pronuncia):
+    dicionario = Dicionario.objects.all().order_by('silabas')
+    # Busca as rimas com base na pronúncia selecionada
+    palavra_selecionada = dicionario.get(palavra__iexact=palavra, pronuncia=pronuncia)
+    rima_da_palavra = dicionario.get(pronuncia__iexact=pronuncia).rima
+    rimas_com_palavra = dicionario.filter(rima=rima_da_palavra)
+    return render(request, 'rimaverso/buscar.html', {'palavra': palavra_selecionada, 'rimas': rimas_com_palavra})
